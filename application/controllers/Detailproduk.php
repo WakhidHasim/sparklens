@@ -6,7 +6,7 @@ class Detailproduk extends CI_Controller
     public function index()
     {
         $this->load->view('templates/customer/header');
-        $this->load->view('customer/detailproduk');
+        $this->load->view('customer/detailproduk/index');
         $this->load->view('templates/customer/footer');
     }
 }

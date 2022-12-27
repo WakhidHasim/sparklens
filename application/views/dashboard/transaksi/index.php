@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="<?= base_url('assets/dashboard/css/card.css'); ?>" />
+
 <div class="card container-xxl flex-grow-1 container-p-y">
     <div class="card-header">
         <div class="status">Pesanan Baru</div>

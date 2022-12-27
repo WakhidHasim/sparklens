@@ -11,7 +11,7 @@
 									<p style="color: #FFFF00">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
 										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
 									<div class="add-bag d-flex align-items-center">
-										<a class="add-btn" href="#produk"><span class="lnr lnr-chevron-down" ></span></a>
+										<a class="add-btn" href="<?= base_url('#produk'); ?>"><span class="lnr lnr-chevron-down" ></span></a>
 										<span class="add-text text-uppercase" style="color: #FFFFFF">Eksplor Sekarang</span>
 									</div>
 								</div>
@@ -50,7 +50,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="assets/user/img/product/p1.jpg" alt="">
 							<div class="product-details">
-								<a href="#">
+								<a href="<?= base_url('detailproduk'); ?>">
 									<h6>Kacamata 1</h6>
 								</a>	
 								<div class="price">
@@ -58,11 +58,11 @@
 										<h6 class="l-through">Rp.210.000</h6>
 								</div>
 								<div class="prd-bottom">
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="ti-shopping-cart"></span>
 										<p class="hover-text">Keranjang</p>
 									</a>
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="lnr lnr-camera"></span>
 										<p class="hover-text">Coba AR!</p>
 									</a>
@@ -75,7 +75,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="assets/user/img/product/p1.jpg" alt="">
 							<div class="product-details">
-								<a href="#">
+								<a href="<?= base_url('detailproduk'); ?>">
 									<h6>Kacamata 1</h6>
 								</a>	
 								<div class="price">
@@ -83,11 +83,11 @@
 										<h6 class="l-through">Rp.210.000</h6>
 								</div>
 								<div class="prd-bottom">
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="ti-shopping-cart"></span>
 										<p class="hover-text">Keranjang</p>
 									</a>
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="lnr lnr-camera"></span>
 										<p class="hover-text">Coba AR!</p>
 									</a>
@@ -100,7 +100,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="assets/user/img/product/p1.jpg" alt="">
 							<div class="product-details">
-								<a href="#">
+								<a href="<?= base_url('detailproduk'); ?>">
 									<h6>Kacamata 1</h6>
 								</a>	
 								<div class="price">
@@ -108,11 +108,11 @@
 										<h6 class="l-through">Rp.210.000</h6>
 								</div>
 								<div class="prd-bottom">
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="ti-shopping-cart"></span>
 										<p class="hover-text">Keranjang</p>
 									</a>
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="lnr lnr-camera"></span>
 										<p class="hover-text">Coba AR!</p>
 									</a>
@@ -125,7 +125,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="assets/user/img/product/p1.jpg" alt="">
 							<div class="product-details">
-								<a href="#">
+								<a href="<?= base_url('detailproduk'); ?>">
 									<h6>Kacamata 1</h6>
 								</a>	
 								<div class="price">
@@ -133,11 +133,11 @@
 										<h6 class="l-through">Rp.210.000</h6>
 								</div>
 								<div class="prd-bottom">
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="ti-shopping-cart"></span>
 										<p class="hover-text">Keranjang</p>
 									</a>
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="lnr lnr-camera"></span>
 										<p class="hover-text">Coba AR!</p>
 									</a>
@@ -150,7 +150,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="assets/user/img/product/p1.jpg" alt="">
 							<div class="product-details">
-								<a href="#">
+								<a href="<?= base_url('detailproduk'); ?>">
 									<h6>Kacamata 1</h6>
 								</a>	
 								<div class="price">
@@ -158,11 +158,11 @@
 										<h6 class="l-through">Rp.210.000</h6>
 								</div>
 								<div class="prd-bottom">
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="ti-shopping-cart"></span>
 										<p class="hover-text">Keranjang</p>
 									</a>
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="lnr lnr-camera"></span>
 										<p class="hover-text">Coba AR!</p>
 									</a>
@@ -175,7 +175,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="assets/user/img/product/p1.jpg" alt="">
 							<div class="product-details">
-								<a href="#">
+								<a href="<?= base_url('detailproduk'); ?>">
 									<h6>Kacamata 1</h6>
 								</a>	
 								<div class="price">
@@ -183,11 +183,11 @@
 										<h6 class="l-through">Rp.210.000</h6>
 								</div>
 								<div class="prd-bottom">
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="ti-shopping-cart"></span>
 										<p class="hover-text">Keranjang</p>
 									</a>
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="lnr lnr-camera"></span>
 										<p class="hover-text">Coba AR!</p>
 									</a>
@@ -200,7 +200,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="assets/user/img/product/p1.jpg" alt="">
 							<div class="product-details">
-								<a href="#">
+								<a href="<?= base_url('detailproduk'); ?>">
 									<h6>Kacamata 1</h6>
 								</a>	
 								<div class="price">
@@ -208,11 +208,11 @@
 										<h6 class="l-through">Rp.210.000</h6>
 								</div>
 								<div class="prd-bottom">
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="ti-shopping-cart"></span>
 										<p class="hover-text">Keranjang</p>
 									</a>
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="lnr lnr-camera"></span>
 										<p class="hover-text">Coba AR!</p>
 									</a>
@@ -225,7 +225,7 @@
 						<div class="single-product">
 							<img class="img-fluid" src="assets/user/img/product/p1.jpg" alt="">
 							<div class="product-details">
-								<a href="#">
+								<a href="<?= base_url('detailproduk'); ?>">
 									<h6>Kacamata 1</h6>
 								</a>	
 								<div class="price">
@@ -233,11 +233,11 @@
 										<h6 class="l-through">Rp.210.000</h6>
 								</div>
 								<div class="prd-bottom">
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="ti-shopping-cart"></span>
 										<p class="hover-text">Keranjang</p>
 									</a>
-									<a href="" class="social-info">
+									<a href="<?= base_url('#'); ?>" class="social-info">
 										<span class="lnr lnr-camera"></span>
 										<p class="hover-text">Coba AR!</p>
 									</a>
