@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/dashboard/vendor/css/core.css'); ?>" class="template-customizer-core-css" />
     <link rel="stylesheet" href="<?= base_url('assets/dashboard/vendor/css/theme-default.css'); ?>" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="<?= base_url('assets/dashboard/css/demo.css'); ?>" />
+    <link rel="stylesheet" href="<?= base_url('assets/dashboard/css/card.css'); ?>" />
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/dashboard/vendor/libs/perfect-scrollbar/perfect-scrollbar.css'); ?>" />
@@ -70,9 +71,6 @@
 
                         <ul class="navbar-nav flex-row align-items-center ms-auto">
                             <!-- Place this tag where you want the button to render. -->
-                            <li class="nav-item lh-1 me-3">
-                                <a class="github-button" href="https://github.com/themeselection/sneat-html-admin-template-free" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star themeselection/sneat-html-admin-template-free on GitHub">Star</a>
-                            </li>
 
                             <!-- User -->
                             <li class="nav-item navbar-dropdown dropdown-user dropdown">
@@ -91,7 +89,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block">John Doe</span>
+                                                    <span class="fw-semibold d-block"> Doe</span>
                                                     <small class="text-muted">Admin</small>
                                                 </div>
                                             </div>

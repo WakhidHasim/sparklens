@@ -7,7 +7,7 @@ class User extends CI_Controller
     {
         $this->load->view('templates/dashboard/header');
         $this->load->view('templates/dashboard/aside');
-        $this->load->view('user/index');
+        $this->load->view('dashboard/user/index');
         $this->load->view('templates/dashboard/footer');
     }
 }
