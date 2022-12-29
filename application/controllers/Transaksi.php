@@ -7,7 +7,7 @@ class Transaksi extends CI_Controller
     {
         $this->load->view('templates/dashboard/header');
         $this->load->view('templates/dashboard/aside');
-        $this->load->view('dashboard/transaksi/index');
+        $this->load->view('dashboard/transaksi/newindex');
         $this->load->view('templates/dashboard/footer');
     }
 }

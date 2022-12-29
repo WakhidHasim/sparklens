@@ -1,6 +1,6 @@
 .card {
-	width: 700px;
-	height: 320px;
+	width: auto;
+	height: auto;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	display: flex;
 	flex-direction: column;
@@ -19,6 +19,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	padding: 10px;
+	margin-top: 5px;
 }
 
 .card-footer {
@@ -39,11 +40,11 @@
 
 .items ul {
 	list-style: none;
-  margin-top: 20px;
+	margin-top: 20px;
 	margin: 10px;
 	padding: 10px;
 	display: inline-block;
-  justify-content: center;
+	justify-content: center;
 	flex-direction: row;
 	align-items: center;
 }
@@ -62,7 +63,7 @@
 }
 
 .item-details {
-	display: flex;
+	display: auto;
 	flex-direction: column;
 	align-items: flex-start;
 }
@@ -120,4 +121,17 @@
 
 .btn:active {
 	transform: scale(0.95);
+}
+
+.flex-container {
+	display: flex;
+	gap: 50px;
+}
+
+.items-start {
+	display: flex;
+}
+
+.item-details > div {
+	display: flex;
 }
