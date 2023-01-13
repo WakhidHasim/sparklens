@@ -8,12 +8,14 @@
                     <div class="col-lg-5 col-md-6">
                         <div class="banner-content">
                             <h1 style="color: #FFFFFF">Masa Depan <br>Berbelanja!</h1>
-                            <p style="color: #FFFF00">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <div class="add-bag d-flex align-items-center">
-                                <a class="add-btn" href="<?= base_url('#produk'); ?>"><span class="lnr lnr-chevron-down"></span></a>
+                            <p style="color: #FFFF00">Rasakan pengalaman baru dalam berbelanja dengan mencoba
+                            produk secara real-time dengan menggunakan teknologi Augmented Reality
+                            yang dapat anda gunakan di semua produk kacamata SparkLens.</p>
+                            <!-- <div class="add-bag d-flex align-items-center">
+                                <a class="add-btn" href="<?= base_url('#produk'); ?>"><span
+                                        class="lnr lnr-chevron-down"></span></a>
                                 <span class="add-text text-uppercase" style="color: #FFFFFF">Eksplor Sekarang</span>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -38,9 +40,7 @@
                 <div class="col-lg-6 text-center">
                     <div class="section-title">
                         <h1>Produk Terbaru</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore
-                            magna aliqua.</p>
+                        <p>Klik ikon kamera untuk mencoba produk secara real-time menggunakan face tracking Augmented Reality</p>
                     </div>
                 </div>
             </div>
@@ -246,8 +246,13 @@
                     </div>
                 </div>
             </div>
+            <div class="row justify-content-center">
+                <a href="<?= base_url('all_produk'); ?>" class="primary-btn submit_btn">Semua Produk</a>
+
+            </div>
         </div>
     </div>
+
     <br>
     <br>
 </section>

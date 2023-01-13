@@ -3,7 +3,6 @@
 
     <!-- Responsive Table -->
     <div class="card p-4">
-        <h5 class="card-header">Responsive Table</h5>
         <div class="table-responsive text-nowrap">
             <table class="table">
                 <thead>

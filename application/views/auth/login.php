@@ -1,31 +1,42 @@
-<!--================Login Box Area =================-->
-<section class="login_box_area section_gap">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <div class="login_form_inner">
-                    <a class="mx-auto mb-4" href="<?= base_url('#'); ?>"><img src="assets/user/img/logo.png" alt="" style="width: 200px; "></a>
-                    <form class="row login_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-                        <div class="col-md-12 form-group">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <div class="creat_account">
-                                <input type="checkbox" id="f-option2" name="selector">
-                                <label for="f-option2">Keep me logged in</label>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7">
+            <div class="card bg-secondary border-0 my-auto">
+                <div class="card-body px-lg-5 py-lg-5">
+                    <div class="text-center text-muted mb-4">
+                        <a href="<?= base_url('home'); ?>">
+                            <img src="<?= base_url(); ?>assets/user/img/big_logo.png" class="navbar-brand-img" width="200">
+                        </a>
+                    </div>
+                    <?= $this->session->flashdata('message'); ?>
+                    <form role="form" method="POST" action="<?= base_url('auth') ?>">
+                        <div class="form-group">
+                            <div class="input-group input-group-merge input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                </div>
+                                <input class="form-control" placeholder="Email" type="text" id="email" name="email" value="<?= set_value('email'); ?>">
                             </div>
+                            <?= form_error('email', '<small class="text-danger">', '</small>'); ?>
                         </div>
-                        <div class="col-md-12 form-group">
-                            <button type="submit" value="submit" class="primary-btn">Log In</button>
-                            <a href="#">Forgot Password?</a>
+                        <div class="form-group">
+                            <div class="input-group input-group-merge input-group-alternative">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                </div>
+                                <input class="form-control" placeholder="Password" type="password" id="password" name="password">
+                            </div>
+                            <?= form_error('password', '<small class="text-danger">', '</small>'); ?>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary my-4">Login</button>
+                        </div>
+                        <div class="text-center">
+                            <h5 class="text-default">Belum Punya Akun ? <a href="<?= base_url('auth/register') ?>">Daftar Disini !</a></h5>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<!--================End Login Box Area =================-->
+</div>

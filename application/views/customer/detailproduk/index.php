@@ -1,4 +1,4 @@
-<!--================Single Product Area =================-->
+<!--================Detail Product Area =================-->
 <br><br>
 <div class="product_image_area">
     <div class="container">
@@ -33,8 +33,5 @@
         </div>
     </div>
 </div>
-<!--================End Single Product Area =================-->
-
-<!-- Start related-product Area -->
+<!--================End Detail Product Area =================-->
 <br><br><br>
-<!-- End related-product Area -->
