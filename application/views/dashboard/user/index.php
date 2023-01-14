@@ -1,5 +1,6 @@
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> Basic Tables</h4>
+    <h4 class="fw-bold py-3 mb-4"></span> Semua User
+    </h4>
 
     <!-- Responsive Table -->
     <div class="card">
@@ -7,11 +8,10 @@
             <table class="table">
                 <thead>
                     <tr class="text-nowrap">
-                        <th>#</th>
-                        <th>Table heading</th>
-                        <th>Table heading</th>
-                        <th>Table heading</th>
-                        <th>Table heading</th>
+                        <th>No</th>
+                        <th>Nama User</th>
+                        <th>Email</th>
+                        <th>Role</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,11 +20,9 @@
                         <td>Table cell</td>
                         <td>Table cell</td>
                         <td>Table cell</td>
-                        <td>Table cell</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <!--/ Responsive Table -->
 </div>

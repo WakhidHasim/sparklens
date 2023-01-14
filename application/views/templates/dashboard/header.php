@@ -91,14 +91,14 @@
                                                     </div>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <span class="fw-semibold d-block"> Doe</span>
+                                                    <span class="fw-semibold d-block"><?= $session['nama'] ?></span>
                                                     <small class="text-muted">Admin</small>
                                                 </div>
                                             </div>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="auth-login-basic.html">
+                                        <a class="dropdown-item" href="<?= base_url('auth'); ?>">
                                             <i class="bx bx-power-off me-2"></i>
                                             <span class="align-middle">Log Out</span>
                                         </a>

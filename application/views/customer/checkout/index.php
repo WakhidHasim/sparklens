@@ -40,18 +40,15 @@
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Alamat Pengantaran</h4>
             <form class="needs-validation" novalidate>
-                <div class="mb-3"> <label for="nama">Nama Penerima</label> <input type="text" class="form-control"
-                        id="nama" placeholder="" value="" required>
+                <div class="mb-3"> <label for="nama">Nama Penerima</label> <input type="text" class="form-control" id="nama" placeholder="" value="" required>
                     <div class="invalid-feedback"> Wajib diisi. </div>
                 </div>
 
-                <div class="mb-3"> <label for="alamat">Nomor Hp</label> <input type="text" class="form-control"
-                        id="no_hp" placeholder="08xxx" required>
+                <div class="mb-3"> <label for="alamat">Nomor Hp</label> <input type="text" class="form-control" id="no_hp" placeholder="08xxx" required>
                     <div class="invalid-feedback"> Wajib diisi. </div>
                 </div>
 
-                <div class="mb-3"> <label for="alamat">Alamat Lengkap</label> <input type="text" class="form-control"
-                        id="alamat" placeholder="Jl. Sesama 123" required>
+                <div class="mb-3"> <label for="alamat">Alamat Lengkap</label> <input type="text" class="form-control" id="alamat" placeholder="Jl. Sesama 123" required>
                     <div class="invalid-feedback"> Wajib diisi. </div>
                 </div>
 
@@ -59,12 +56,10 @@
                     <div class="col-md-5 mb-3"> <label for="provinsi">Provinsi</label>
                         <select class="custom-select d-block w-100" id="country" required>
                             <option value="">Pilih</option>
-                            <option>United States</option>
                         </select>
                         <div class="invalid-feedback"> Wajib diisi. </div>
                     </div>
-                    <div class="col-md-3 mb-3"> <label for="pos">Kode Pos</label> <input type="text"
-                            class="form-control" id="pos" placeholder="" required>
+                    <div class="col-md-3 mb-3"> <label for="pos">Kode Pos</label> <input type="text" class="form-control" id="pos" placeholder="" required>
                         <div class="invalid-feedback"> Wajib diisi. </div>
                     </div>
                 </div>

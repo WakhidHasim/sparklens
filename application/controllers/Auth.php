@@ -10,7 +10,7 @@ class Auth extends CI_Controller
         $this->load->library('form_validation');
 
         $this->load->model('Mauth', 'm_auth');
-        
+
         $this->load->library('session');
     }
 
@@ -43,31 +43,23 @@ class Auth extends CI_Controller
         $user = $this->m_auth->cekEmail($email);
 
         if ($user) {
-            if ($user['is_active'] == 1) {
-                if (password_verify($password, $user['password'])) {
-                    $data = [
-                        'email' => $user['email'],
-                        'id_role_fk' => $user['id_role_fk']
-                    ];
+            if (password_verify($password, $user['password'])) {
+                $data = [
+                    'email' => $user['email'],
+                    'role_id' => $user['role_id']
+                ];
 
-                    $this->session->set_userdata($data);
+                $this->session->set_userdata($data);
 
-                    if ($user['id_role_fk'] == 1) {
-                        redirect('admin');
-                    } elseif ($user['id_role_fk'] == 2) {
-                        redirect('home');
-                    }
-                } else {
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                        Password Yang Anda Masukan Salah !
-                    </div>');
-
-                    redirect('auth');
+                if ($user['role_id'] == 1) {
+                    redirect('dashboard');
+                } elseif ($user['role_id'] == 2) {
+                    redirect('home');
                 }
             } else {
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-                    Email Anda Belum Aktif !
-                </div>');
+                        Password Yang Anda Masukan Salah !
+                    </div>');
 
                 redirect('auth');
             }
@@ -110,8 +102,7 @@ class Auth extends CI_Controller
                 'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                'id_role_fk' => 2,
-                'is_active' => 1,
+                'role_id' => 2,
             ];
 
             $this->m_auth->save($data);
@@ -127,7 +118,7 @@ class Auth extends CI_Controller
     public function logout()
     {
         $this->session->unset_userdata('email');
-        $this->session->unset_userdata('id_role_fk');
+        $this->session->unset_userdata('role_id');
 
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
                 Selamat, Anda Sudah Berhasil Logout !
