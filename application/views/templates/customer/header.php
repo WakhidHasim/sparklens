@@ -31,6 +31,13 @@
   <!-- Bootstrap 5 CSS -->
   <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!-- A-Frame & Zappar -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://libs.zappar.com/zappar-aframe/0.2.3/zappar-aframe.js"></script>
+  <script src="https://unpkg.com/@zappar/zappar-aframe@1.0.1/dist/zappar-aframe.min.js"></script>
 </head>
 
 <body>

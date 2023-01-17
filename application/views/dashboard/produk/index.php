@@ -3,11 +3,65 @@
         <div class="col-lg-6">
             <h3 class="card-title" style="font-weight: bold;">Data Produk</h3>
         </div>
+        <!-- Trigger Button PopUp -->
         <div class="col-md-6" style="text-align: right;">
-            <button class="btn btn-primary" data-toggle="modal" data-target="#tambah">Tambah Produk</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+                Tambah Produk
+            </button>
         </div>
+        <!-- PopUp Start-->
+        <div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <form role="form" action="<?= base_url('produk/addProduk') ?>" method="POST" enctype="multipart/form-data">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel1">Tambah Produk</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col mb-3">
+                                    <label for="nameBasic" class="form-label">Nama Produk</label>
+                                    <input type="text" id="nameBasic" class="form-control" placeholder="Kacamata Keren">
+                                </div>
+                            </div>
+                            <div class="col mb-3">
+                                <label for="formFile" class="form-label">Foto Produk <small class="text-muted">(.jpg
+                                        .jpeg
+                                        .png)</small>
+                                </label>
+                                <input class="form-control" type="file" accept="image/jpg, image/jpeg, image/png"
+                                    name="image" id="formFile">
+                            </div>
+                            <div class="col mb-3">
+                                <label for="formFile" class="form-label">3D Model AR <small class="text-muted">(.gltf
+                                        folder)</small>
+                                </label>
+                                <input class="form-control" type="file" accept="model/gltf+json, model/gltf-binary"
+                                    name="3dmodel" webkitdirectory directory multiple id="formFile">
+                            </div>
+                            <div class="col mb-3">
+                                <label for="nameBasic" class="form-label">Harga</label>
+                                <input type="text" id="nameBasic" class="form-control" placeholder="150000">
+                            </div>
+                            <div class="col mb-3">
+                                <label for="nameBasic" class="form-label">Stok</label>
+                                <input type="text" id="nameBasic" class="form-control" placeholder="500">
+                            </div>
+                            <div class="col mb-3"><label for="exampleFormControlTextarea1"
+                                    class="form-label">Deskripsi</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" value="simpan">Simpan</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- PopUp End-->
     </div>
-
 
     <!-- Responsive Table -->
     <div class="card">
@@ -25,19 +79,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
-                        <td>
-                            <div class="justify-content-md-center">
-                                <button class="btn btn-warning">Edit</button>
-                            </div>
-                        </td>
-                    </tr>
+                    <?php
+                    $no = 1;
+                    foreach ($produk as $value): ?>
+                        <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $value['nama_produk'] ?></td>
+                            <td style="text-align: center;">
+                                <img src="<?= base_url('assets/upload_produk/') ?><?= $value['foto_produk'] ?>" style="width: 100px; height: 80px;">
+                            </td>
+                            <td><?= $value['harga'] ?></td>
+                            <td><?= $value['stok'] ?></td>
+                            <td><?= $value['deskripsi_produk'] ?></td>
+                            <td>
+                                <div class="justify-content-md-center">
+                                    <button class="btn btn-warning">Edit</button>
+                                    <button class="btn btn-danger">Hapus</button>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach
+                    ?>
                 </tbody>
             </table>
         </div>
@@ -57,10 +119,11 @@
                             <label>Nama Kategori</label>
                             <select class="form-control" name="id_kategori_fk">
                                 <option value="">Pilih</option>
-                                <?php
-                                foreach ($kategori as $val) { ?>
-                                    <option value="<?= $val['id_kategori'] ?>"><?= $val['nama_kategori'] ?></option>
-                                <?php
+                                <?php foreach ($kategori as $val) { ?>
+                                    <option value="<?= $val['id_kategori'] ?>">
+                                        <?= $val['nama_kategori'] ?>
+                                    </option>
+                                    <?php
                                 }
                                 ?>
                             </select>

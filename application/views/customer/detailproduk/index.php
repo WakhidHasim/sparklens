@@ -26,7 +26,7 @@
                     </div>
                     <div class="card_area d-flex align-items-center">
                         <a class="primary-btn" href="<?= base_url('#'); ?>">Add to Cart</a>
-                        <a class="primary-btn" href="<?= base_url('#'); ?>">Coba AR!</a>
+                        <a class="primary-btn" href="<?= base_url('arpage'); ?>">Coba AR!</a>
                     </div>
                 </div>
             </div>
