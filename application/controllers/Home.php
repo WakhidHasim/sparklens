@@ -14,6 +14,7 @@ class Home extends CI_Controller
     public function index()
     {
         $data['produk_terbaru'] = $this->Mhome->get_all_produk_terbaru()->result();
+
         $this->load->view('templates/customer/header');
         $this->load->view('templates/customer/navbar');
         $this->load->view('customer/index', $data);

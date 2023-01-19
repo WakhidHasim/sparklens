@@ -7,80 +7,55 @@ class Produk extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Mproduk', 'm_produk');
+        $this->load->model('Mproduk', 'produk');
     }
 
     public function index()
     {
         $data['session'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
 
-        $data['produk'] = $this->m_produk->getAllProduk();
+        $data['produk'] = $this->produk->getAllProduk();
 
         $this->load->view('templates/dashboard/header', $data);
         $this->load->view('templates/dashboard/aside');
         $this->load->view('dashboard/produk/index', $data);
         $this->load->view('templates/dashboard/footer');
     }
-    private function _upload()
-    {
-        $nama = $_FILES['foto_produk']['name'];
-        $type = $_FILES['foto_produk']['type'];
-        $error = $_FILES['foto_produk']['error'];
-        $size = $_FILES['foto_produk']['size'];
-        $tmpName = $_FILES['foto_produk']['tmp_name'];
-
-        // Cek ekstensi file
-        $ekstensiGambarValid = ['jpg', 'png', 'jpeg', 'svg'];
-        $ekstensiGambar = explode('.', $nama);
-        $ekstensiGambar = strtolower(end($ekstensiGambar));
-
-        if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-            echo "<script>alert('Ekstensi File Tidak Diizinkan')</script>";
-            return false;
-        }
-
-        // Cek size
-        if ($size > 50000000) {
-            echo "<script>alert('Ekstensi File Terlalu Besar')</script>";
-            return false;
-        }
-
-        $namaBaru = $nama . uniqid() . '.' . $ekstensiGambar;
-        move_uploaded_file($tmpName, 'assets/upload_produk/' . $namaBaru);
-
-        return $namaBaru;
-    }
 
     public function addProduk()
     {
-        $foto_produk = $this->_upload();
-        $model_ar = $this->_upload();
+        $upload = $_FILES['foto_produk']['name'];
+
+        if ($upload) {
+            $config['upload_path']   = './assets/images/';
+            $config['allowed_types'] = 'glb|jpg|png|jpeg';
+            $config['max_size']      = '5000';
+            $config['file_name']     = $upload;
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload('foto_produk')) {
+                $foto_produk = $this->upload->data('file_name');
+            }
+        }
 
         $data = [
-            'nama_produk' => $this->input->post('nama_produk'),
-            'foto_produk' => $foto_produk,
-            'model_ar' => $model_ar,
-            'harga' => $this->input->post('harga'),
-            'stok' => $this->input->post('stok'),
-            'deskripsi_produk' => $this->input->post('deskripsi_produk'),
+            "nama" => $this->input->post('nama', true),
+            "deskripsi" => $this->input->post('deskripsi', true),
+            "harga" => $this->input->post('harga', true),
+            "stok" => $this->input->post('stok', true),
+            "foto_produk" => $foto_produk,
+            "model" => $this->input->post('model', true)
         ];
 
-        $dataProduk = $this->m_produk->addProduk($data);
-        if ($dataProduk > 0) {
-            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fas fa-check"></i> Add Data Success</h5>
-            </div>');
+        // query untuk menambahkan data artikel
+        $produk = $this->produk->addProduk($data);
+        if ($produk > 0) {
             redirect('produk');
         } else {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <h5><i class="icon fas fa-ban"></i> Add Data Failed</h5>
-            </div>');
             redirect('produk');
         }
     }
-
     public function editProduk()
     {
         if ($_FILES['foto_produk']['error'] == 4) {

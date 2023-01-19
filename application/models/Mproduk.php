@@ -17,6 +17,12 @@ class Mproduk extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function addModel($data)
+    {
+        $this->db->insert('produk', $data);
+        return $this->db->affected_rows();
+    }
+
 
     public function editProduk($data, $id)
     {
@@ -51,5 +57,3 @@ class Mproduk extends CI_Model
         }
     }
 }
-
-?>

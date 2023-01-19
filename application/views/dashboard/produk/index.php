@@ -11,7 +11,7 @@
         </div>
         <!-- PopUp Start-->
         <div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog" role="document">
+            <div class="modal-dialog" role="document">
                 <form role="form" action="<?= base_url('produk/addProduk') ?>" method="POST" enctype="multipart/form-data">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -22,7 +22,7 @@
                             <div class="row">
                                 <div class="col mb-3">
                                     <label for="nameBasic" class="form-label">Nama Produk</label>
-                                    <input type="text" id="nameBasic" class="form-control" placeholder="Kacamata Keren">
+                                    <input type="text" id="nameBasic" class="form-control" placeholder="Kacamata Keren" name="nama">
                                 </div>
                             </div>
                             <div class="col mb-3">
@@ -30,27 +30,23 @@
                                         .jpeg
                                         .png)</small>
                                 </label>
-                                <input class="form-control" type="file" accept="image/jpg, image/jpeg, image/png"
-                                    name="image" id="formFile">
+                                <input class="form-control" type="file" accept="image/jpg, image/jpeg, image/png" id="formFile" name="foto_produk">
                             </div>
                             <div class="col mb-3">
-                                <label for="formFile" class="form-label">3D Model AR <small class="text-muted">(.gltf
-                                        folder)</small>
+                                <label for="nameBasic" class="form-label">3D Model<small class="text-muted">(AR Service link)</small>
                                 </label>
-                                <input class="form-control" type="file" accept="model/gltf+json, model/gltf-binary"
-                                    name="3dmodel" webkitdirectory directory multiple id="formFile">
+                                <input type="text" id="nameBasic" class="form-control" placeholder="www" name="model">
                             </div>
                             <div class="col mb-3">
                                 <label for="nameBasic" class="form-label">Harga</label>
-                                <input type="text" id="nameBasic" class="form-control" placeholder="150000">
+                                <input type="text" id="nameBasic" class="form-control" placeholder="150000" name="harga">
                             </div>
                             <div class="col mb-3">
                                 <label for="nameBasic" class="form-label">Stok</label>
-                                <input type="text" id="nameBasic" class="form-control" placeholder="500">
+                                <input type="text" id="nameBasic" class="form-control" placeholder="500" name="stok">
                             </div>
-                            <div class="col mb-3"><label for="exampleFormControlTextarea1"
-                                    class="form-label">Deskripsi</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <div class="col mb-3"><label for="exampleFormControlTextarea1" class="form-label">Deskripsi</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="deskripsi"></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -58,7 +54,7 @@
                             <button type="submit" class="btn btn-primary" value="simpan">Simpan</button>
                         </div>
                     </div>
-                </div>
+            </div>
         </div>
         <!-- PopUp End-->
     </div>
@@ -81,16 +77,16 @@
                 <tbody>
                     <?php
                     $no = 1;
-                    foreach ($produk as $value): ?>
+                    foreach ($produk as $value) : ?>
                         <tr>
                             <td><?= $no++; ?></td>
-                            <td><?= $value['nama_produk'] ?></td>
+                            <td><?= $value['nama'] ?></td>
                             <td style="text-align: center;">
-                                <img src="<?= base_url('assets/upload_produk/') ?><?= $value['foto_produk'] ?>" style="width: 100px; height: 80px;">
+                                <img src="<?= base_url('assets/images/') ?><?= $value['foto_produk'] ?>" style="width: 100px; height: 80px;">
                             </td>
                             <td><?= $value['harga'] ?></td>
                             <td><?= $value['stok'] ?></td>
-                            <td><?= $value['deskripsi_produk'] ?></td>
+                            <td><?= $value['deskripsi'] ?></td>
                             <td>
                                 <div class="justify-content-md-center">
                                     <button class="btn btn-warning">Edit</button>
@@ -102,66 +98,6 @@
                     ?>
                 </tbody>
             </table>
-        </div>
-    </div>
-    <div class="modal fade" id="tambah">
-        <div class="modal-dialog">
-            <form role="form" action="<?= base_url('produk/addProduk') ?>" method="POST" enctype="multipart/form-data">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Tambah Data</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label>Nama Kategori</label>
-                            <select class="form-control" name="id_kategori_fk">
-                                <option value="">Pilih</option>
-                                <?php foreach ($kategori as $val) { ?>
-                                    <option value="<?= $val['id_kategori'] ?>">
-                                        <?= $val['nama_kategori'] ?>
-                                    </option>
-                                    <?php
-                                }
-                                ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Nama Produk</label>
-                            <input type="text" class="form-control" name="nama_produk">
-                        </div>
-                        <div class="form-group">
-                            <label for="custom-file">Foto Produk</label>
-                            <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile" name="foto_produk">
-                                <label class="custom-file-label" for="customFile">Pilih file</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Config AR</label>
-                            <input type="text" class="form-control" name="config_AR">
-                        </div>
-                        <div class="form-group">
-                            <label>Harga</label>
-                            <input type="number" class="form-control" name="harga">
-                        </div>
-                        <div class="form-group">
-                            <label>Stok</label>
-                            <input type="number" class="form-control" name="stok">
-                        </div>
-                        <div class="form-group">
-                            <label>Deskripsi Produk</label>
-                            <input type="text" class="form-control" name="deskripsi_produk">
-                        </div>
-                        <div class="modal-footer justify-content-between">
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
-                            <button type="submit" class="btn btn-primary">Tambah</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
         </div>
     </div>
 </div>
