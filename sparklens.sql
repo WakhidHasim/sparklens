@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 19, 2023 at 10:01 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.0.23
+-- Generation Time: Jan 22, 2023 at 03:28 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -60,21 +60,22 @@ CREATE TABLE `produk` (
   `harga` int(11) NOT NULL,
   `stok` int(11) NOT NULL,
   `foto_produk` varchar(300) NOT NULL,
-  `model` varchar(300) NOT NULL
+  `model_3d` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `produk`
 --
 
-INSERT INTO `produk` (`id_produk`, `nama`, `deskripsi`, `harga`, `stok`, `foto_produk`, `model`) VALUES
-(1, 'tes', 'tes', 15000, 100, 'appetizer1.png', ''),
-(2, 'coba', 'coba', 1, 2, 'desert.png', ''),
-(3, 'tes 123', 'tes123', 123, 23, 'internasional.png', ''),
-(4, 'asd', 'asd', 123, 123, 'nusantara1.png', ''),
-(5, 'asd', 'asd', 123, 123, 'nusantara2.png', ''),
-(6, 'zxc', 'zxc', 234, 234, '', 'desert1.png'),
-(7, 'asd', 'asf', 1234, 1234, 'desert2.png', 'www.auo.com');
+INSERT INTO `produk` (`id_produk`, `nama`, `deskripsi`, `harga`, `stok`, `foto_produk`, `model_3d`) VALUES
+(13, 'Bismillah', 'af', 123, 123, '116.png', ''),
+(14, 'Bismillah', 'sdvfsfs', 463, 3542, '120.png', ''),
+(15, 'Bismillah', 'hbhlujbn', 463, 234, '122.png', ''),
+(16, 'Bismillah', 'dsgr576', 9999, 9999, '126.png', ''),
+(19, 'qq', 'aqqq', 11, 1111, '131.png', ''),
+(20, 'ss', '222', 222, 222, '36.png', ''),
+(21, 'Alwi Hasan', '999999', 999999, 999999, '37.png', ''),
+(22, 'wwww', 'www', 222, 222, '38.png', '');
 
 -- --------------------------------------------------------
 
@@ -208,7 +209,7 @@ ALTER TABLE `detail_transaksi`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_produk` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `role`
