@@ -89,7 +89,7 @@ class Produk extends CI_Controller
         // }
 
         $data = [
-            'nama_produk' => $this->input->post('nama_produk'),
+            'nama' => $this->input->post('nama'),
             'harga' => $this->input->post('harga'),
             'stok' => $this->input->post('stok'),
             'deskripsi_produk' => $this->input->post('deskripsi_produk'),

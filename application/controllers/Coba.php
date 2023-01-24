@@ -11,7 +11,7 @@ class Coba extends CI_Controller {
     }
  
     public function do_upload() {
-        $config['upload_path']          = './assets/model_3d/';
+        $config['upload_path']          = './assets/file_glb/';
         $config['allowed_types'] = 'glb|application/octet-stream';
         $config['max_size']             = 50000;
  

@@ -24,8 +24,9 @@ class Mproduk extends CI_Model
     }
 
 
-    public function editProduk($data, $id)
+    public function editProduk($data)
     {
+        $id = $this->input->post('id_produk');
         $this->db->update('produk', $data, array('id_produk' => $id));
         return $this->db->affected_rows();
     }
