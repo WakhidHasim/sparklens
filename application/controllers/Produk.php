@@ -107,6 +107,32 @@ class Produk extends CI_Controller
             redirect('produk');
         }
     }
+
+    public function uploadAr()
+    {
+        $config['upload_path']          = './assets/file_glb/';
+        $config['allowed_types'] = 'glb|application/octet-stream';
+        $config['max_size']             = 50000;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('file_glb')) {
+            $error = array('error' => $this->upload->display_errors());
+
+            $this->load->view('coba_upload', $error);
+        } else {
+            array('upload_data' => $this->upload->data());
+
+            $data = [
+                'model_3d' => $this->input->post('model_3d')
+            ];
+
+            $id = $this->input->post('id_produk');
+            $this->produk->uploadAr($data, $id);
+            $this->session->set_flashdata('message', 'File has been uploaded successfully');
+            redirect(base_url('produk'));
+        }
+    }
     private function _upload($field_name)
     {
         $config['upload_path'] = './assets/images/';

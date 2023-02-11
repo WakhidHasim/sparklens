@@ -31,15 +31,22 @@ class Mproduk extends CI_Model
         return $this->db->affected_rows();
     }
 
+    public function uploadAr($data, $id)
+    {
+        $this->db->update('produk', $data, array('id_produk' => $id));
+        return $this->db->affected_rows();
+    }
+
     public function deleteProduk($id)
     {
         $this->db->delete('produk', array('id_produk' => $id));
         return $this->db->affected_rows();
     }
 
-    public function ambil_id_produk($id){
+    public function ambil_id_produk($id)
+    {
         $hasil = $this->db->where('id_produk', $id)->get('produk');
-        if($hasil->num_rows() > 0){
+        if ($hasil->num_rows() > 0) {
             return $hasil->result();
         } else {
             return false;
@@ -49,9 +56,9 @@ class Mproduk extends CI_Model
     public function detail_produk($id)
     {
         $result = $this->db->where('id_produk', $id)
-                            ->limit(1)
-                            ->get('produk');
-        if($result->num_rows() > 0){
+            ->limit(1)
+            ->get('produk');
+        if ($result->num_rows() > 0) {
             return $result->row_object();
         } else {
             return array();

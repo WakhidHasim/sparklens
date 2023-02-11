@@ -52,8 +52,10 @@
                         <div class="single-product">
                             <img class="img-fluid" src="<?= base_url('assets/images/') . $val->foto_produk ?>" alt="IMG-PRODUCT">
                             <div class="product-details">
-                                <a href="<?= base_url('product'); ?>">
-                                    <h6><?= $val->nama ?></h6>
+                                <a href="<?= base_url('detailproduk'); ?>">
+                                    <a href="<?= base_url('home/detailProduk/') . $val->id_produk; ?>" class="btn in-card">
+                                        <h6><?= $val->nama ?></h6>
+                                    </a>
                                 </a>
                                 <div class="price">
                                     <h6>Rp. <?= $val->harga ?>,-</h6>
@@ -64,7 +66,7 @@
                                         <span class="ti-shopping-cart"></span>
                                         <p class="hover-text">Keranjang</p>
                                     </a>
-                                    <a href="<?= base_url('#'); ?>" class="social-info">
+                                    <a href="<?= base_url('arpage'); ?>" class="social-info">
                                         <span class="lnr lnr-camera"></span>
                                         <p class="hover-text">Coba AR!</p>
                                     </a>
@@ -77,11 +79,9 @@
         </div>
         <div class="row justify-content-center">
             <a href="<?= base_url('all_produk'); ?>" class="primary-btn submit_btn">Semua Produk</a>
-
         </div>
     </div>
     </div>
-
     <br>
     <br>
 </section>

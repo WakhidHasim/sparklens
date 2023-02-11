@@ -18,10 +18,9 @@
                     <!-- single product -->
                     <div class="col-lg-3 col-md-6">
                         <div class="single-product">
-                            <img class="img-fluid" src="<?= base_url('assets/images/') . $val->foto_produk ?>"
-                                alt="IMG-PRODUCT">
+                            <img class="img-fluid" src="<?= base_url('assets/images/') . $val->foto_produk ?>" alt="IMG-PRODUCT">
                             <div class="product-details">
-                                <a href="<?= base_url('product'); ?>">
+                                <a href="<?= base_url('detailproduk'); ?>">
                                     <h6>
                                         <?= $val->nama ?>
                                     </h6>
@@ -43,8 +42,7 @@
                             </div>
                         </div>
                     </div>
-                <?php }
-                ; ?>
+                <?php }; ?>
             </div>
 
             <!-- NEXT PAGE BUTTON -->
