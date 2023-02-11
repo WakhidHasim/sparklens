@@ -65,7 +65,7 @@ class Produk extends CI_Controller
         ];
 
         // Ketok e eror mergo DB ne raiso moco file .glb
-        
+
         $produk = $this->produk->addProduk($data);
         if ($produk > 0) {
             redirect('produk');
@@ -82,17 +82,11 @@ class Produk extends CI_Controller
             $foto_produk = $this->_upload('foto_produk');
         }
 
-        // if ($_FILES['model_3d']['error'] == 4) {
-        //     $model_3d = $this->input->post('old_model_3d');
-        // } else {
-        //     $model_3d = $this->_upload('model_3d');
-        // }
-
         $data = [
             'nama' => $this->input->post('nama'),
             'harga' => $this->input->post('harga'),
             'stok' => $this->input->post('stok'),
-            'deskripsi_produk' => $this->input->post('deskripsi_produk'),
+            'deskripsi' => $this->input->post('deskripsi'),
             'foto_produk' => $foto_produk
             // 'model' => $model_3d
         ];
@@ -124,6 +118,25 @@ class Produk extends CI_Controller
             return $this->upload->data('file_name');
         } else {
             return 'default.jpg';
+        }
+    }
+
+    public function deleteProduk()
+    {
+        $id = $this->input->post('id_produk');
+        $dataProduk = $this->produk->deleteProduk($id);
+        if ($dataProduk > 0) {
+            $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fas fa-check"></i> Delete Success</h5>
+            </div>');
+            redirect('produk');
+        } else {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fas fa-ban"></i> Delete Failed</h5>
+            </div>');
+            redirect('produk');
         }
     }
 }
